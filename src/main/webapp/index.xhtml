@@ -8,10 +8,17 @@
 <h:body>
 	<h:form>
 		<div>
-			<h:outputText value="Hello full stack web app!"></h:outputText>
+			<h:outputText value="#{app.name}, v#{app.version}"></h:outputText>
 		</div>
 		<div>
-			<p:spinner />
+			<p:dataTable value="#{sampleBean.list}" var="item">
+				<p:column headerText="id">
+					<h:outputText value="#{item.id}"></h:outputText>
+				</p:column>
+				<p:column headerText="some attribute">
+					<h:outputText value="#{item.someAttribute}"></h:outputText>
+				</p:column>
+			</p:dataTable>
 		</div>
 	</h:form>
 </h:body>
